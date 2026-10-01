@@ -114,7 +114,37 @@ labex:project/ $
 ```
 h hello include int main n printf return stdio void world
 ```
+Решение:
+dents.sh
+```dents.sh
+#!/bin/bash
+if [ $# -eq 0 ]; then
+    echo "Использование: $0 <файл>"
+    exit 1
+fi
 
+grep -oE '[A-Za-z_][A-Za-z0-9_]*' "$1" | sort -u | tr '\n' ' '
+echo
+```
+hello.c
+```hello.c
+#include <stdio.h>
+
+int main(void) {
+    int n = 5;
+    printf("Hello, world!\n");
+    return 0;
+}
+```
+Terminal
+```
+labex:project/ $ nano idents.sh
+
+labex:project/ $ chmod +x idents.sh        
+labex:project/ $ nano hello.c
+labex:project/ $ ./idents.sh hello.c
+h Hello include int main n printf return stdio void world 
+```
 
 
 ## Задача 5
