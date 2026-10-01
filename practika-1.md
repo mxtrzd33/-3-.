@@ -78,7 +78,34 @@ labex:project/ $ grep -v '^#' /etc/protocols | awk '{print $2, $1}' | sort -rn |
 | Hello from RTU MIREA! |
 +-----------------------+
 ```
+bash:
+```
+#!/bin/bash
+# banner - выводит текст в рамке
 
+if [ $# -eq 0 ]; then
+    echo "Использование: $0 \"текст для вывода\""
+    exit 1
+fi
+
+text="$*"
+len=$(( ${#text} + 2 ))
+line=$(printf '+%*s+' "$len" "" | tr ' ' '-')
+
+echo "$line"
+echo "| $text |"
+echo "$line"
+```
+Terminal:
+```
+labex:project/ $ nano banner
+labex:project/ $ chmod +x banner
+labex:project/ $ ./banner 'Hello from RTU MIREA!'
++-----------------------+
+| Hello from RTU MIREA! |
++-----------------------+
+labex:project/ $ 
+```
 
 ## Задача 4
 
