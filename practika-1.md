@@ -78,7 +78,7 @@ labex:project/ $ grep -v '^#' /etc/protocols | awk '{print $2, $1}' | sort -rn |
 | Hello from RTU MIREA! |
 +-----------------------+
 ```
-```bash:
+```bash
 #!/bin/bash
 # banner - выводит текст в рамке
 
