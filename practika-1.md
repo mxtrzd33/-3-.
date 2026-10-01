@@ -186,7 +186,6 @@ labex:project/ $ nano banner
 labex:project/ $ ./reg banner
 Команда 'banner' успешно зарегистрирована в /usr/local/bin
 ```
-Terminal
 
 ## Задача 6
 
