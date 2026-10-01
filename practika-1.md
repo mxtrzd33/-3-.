@@ -161,7 +161,7 @@ h Hello include int main n printf return stdio void world
 
 Решение:
 reg
-```reg
+```bash
 #!/bin/bash
 if [ $# -ne 1 ]; then
     echo "Использование: $0 <файл>" >&2
@@ -175,10 +175,10 @@ sudo install -m 755 "$1" /usr/local/bin/
 echo "Команда '$1' успешно зарегистрирована в /usr/local/bin"
 ```
 banner
-```banner
+```bash
 echo -e '#!/bin/bash\necho "this banner"' > banner
 ```
-Tirminal
+Terminal
 ```
 labex:project/ $ nano reg
 labex:project/ $ chmod +x reg
