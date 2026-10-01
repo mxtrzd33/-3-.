@@ -140,7 +140,6 @@ int main(void) {
 Terminal
 ```
 labex:project/ $ nano idents.sh
-
 labex:project/ $ chmod +x idents.sh        
 labex:project/ $ nano hello.c
 labex:project/ $ ./idents.sh hello.c
