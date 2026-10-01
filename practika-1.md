@@ -160,6 +160,7 @@ h Hello include int main n printf return stdio void world
 В результате для banner задаются правильные права доступа и сам banner копируется в /usr/local/bin.
 
 Решение:
+
 reg
 ```bash
 #!/bin/bash
