@@ -5,6 +5,7 @@
 ## Задача 1
 
 Вывести отсортированный в алфавитном порядке список имен пользователей в файле passwd (вам понадобится grep).
+Решение:
 ```
 labex:project/ $ grep -o '^[^:]*' /etc/passwd | sort
 _apt
@@ -56,7 +57,15 @@ www-data
 139 hip
 138 manet
 ```
-<img width="1004" height="158" alt="image" src="https://github.com/user-attachments/assets/03faf9ea-dc20-4d85-929b-87b97dc92eb4" />
+Решение:
+```
+labex:project/ $ grep -v '^#' /etc/protocols | awk '{print $2, $1}' | sort -rn | head -5
+142 rohc
+141 wesp
+140 shim6
+139 hip
+138 manet
+```
 
 ## Задача 3
 
