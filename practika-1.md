@@ -81,8 +81,6 @@ labex:project/ $ grep -v '^#' /etc/protocols | awk '{print $2, $1}' | sort -rn |
 bash:
 ```bash
 #!/bin/bash
-# banner - выводит текст в рамке
-
 if [ $# -eq 0 ]; then
     echo "Использование: $0 \"текст для вывода\""
     exit 1
