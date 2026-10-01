@@ -115,8 +115,9 @@ labex:project/ $
 h hello include int main n printf return stdio void world
 ```
 Решение:
-dents.sh
-```dents.sh
+
+idents.sh
+```idents.sh
 #!/bin/bash
 if [ $# -eq 0 ]; then
     echo "Использование: $0 <файл>"
