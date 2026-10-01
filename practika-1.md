@@ -159,6 +159,35 @@ h Hello include int main n printf return stdio void world
 
 В результате для banner задаются правильные права доступа и сам banner копируется в /usr/local/bin.
 
+Решение:
+reg
+```reg
+#!/bin/bash
+if [ $# -ne 1 ]; then
+    echo "Использование: $0 <файл>" >&2
+    exit 1
+fi
+if [ ! -f "$1" ]; then
+    echo "Ошибка: файл '$1' не найден" >&2
+    exit 1
+fi
+sudo install -m 755 "$1" /usr/local/bin/
+echo "Команда '$1' успешно зарегистрирована в /usr/local/bin"
+```
+banner
+```banner
+echo -e '#!/bin/bash\necho "this banner"' > banner
+```
+Tirminal
+```
+labex:project/ $ nano reg
+labex:project/ $ chmod +x reg
+labex:project/ $ nano banner
+labex:project/ $ ./reg banner
+Команда 'banner' успешно зарегистрирована в /usr/local/bin
+```
+Terminal
+
 ## Задача 6
 
 Написать программу для проверки наличия комментария в первой строке файлов с расширением c, js и py.
