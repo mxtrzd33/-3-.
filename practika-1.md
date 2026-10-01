@@ -5,10 +5,45 @@
 ## Задача 1
 
 Вывести отсортированный в алфавитном порядке список имен пользователей в файле passwd (вам понадобится grep).
+```
+labex:project/ $ grep -o '^[^:]*' /etc/passwd | sort
+_apt
+avahi
+backup
+bin
+colord
+daemon
+games
+gnats
+irc
+labex
+list
+lp
+mail
+man
+messagebus
+mongodb
+mysql
+news
+nobody
+proxy
+pulse
+redis
+root
+rtkit
+saned
+sshd
+sync
+sys
+systemd-network
+systemd-resolve
+systemd-timesync
+tcpdump
+usbmux
+uucp
+www-data
 
-<img width="1004" height="626" alt="image" src="https://github.com/user-attachments/assets/9c61e177-5dc3-4c2f-9a1f-f0789c04d273" />
-<img width="1004" height="601" alt="image" src="https://github.com/user-attachments/assets/79f5ab92-a842-45b7-a71e-361ca860c91e" />
-
+```
 ## Задача 2
 
 Вывести данные /etc/protocols в отформатированном и отсортированном порядке для 5 наибольших портов, как показано в примере ниже:
