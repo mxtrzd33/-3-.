@@ -196,10 +196,55 @@ labex:project/ $ ./reg banner
 
 Написать программу для нахождения файлов-дубликатов (имеющих 1 или более копий содержимого) по заданному пути (и подкаталогам).
 
+check.sh
+```bash
+cat << 'EOF' > check.sh
+#!/bin/bash
+dir="${1:-.}"
+
+find "$dir" -type f \( -name '*.c' -o -name '*.js' -o -name '*.py' \) -print0 | while IFS= read -r -d '' file; do
+    first=$(head -n 1 "$file")
+    case "$file" in
+        *.py) pattern='^[[:space:]]*#' ;;
+        *)    pattern='^[[:space:]]*(//|/\*)' ;;
+    esac
+
+    if [[ $first =~ $pattern ]]; then
+        echo "$file: comment found"
+    else
+        echo "$file: NO comment"
+    fi
+done
+EOF
+```
+
+```
+abex:project/ $ nano check.sh
+labex:project/ $ chmod +x check.sh
+labex:project/ $ ./check.sh
+labex:project/ $ ./check.sh
+./hello.c: NO comment
+```
+
 ## Задача 8
 
 Написать программу, которая находит все файлы в данном каталоге с расширением, указанным в качестве аргумента и архивирует все эти файлы в архив tar.
 
+dublicat
+```bash
+#!/bin/bash
+dir="${1:-.}"
+
+find "$dir" -type f -exec md5sum {} + | sort | uniq -w32 --all-repeated=separate
+```
+```
+labex:project/ $ nano dublicat
+labex:project/ $ chmod +x dublicat
+labex:project/ $ mkdir t && echo abc > t/a && echo abc > t/b && echo xyz > t/c
+labex:project/ $ ./dublicat t
+0bee89b07a248e27c83fc3d5951213c1  t/a
+0bee89b07a248e27c83fc3d5951213c1  t/b
+```
 ## Задача 9
 
 Написать программу, которая заменяет в файле последовательности из 4 пробелов на символ табуляции. Входной и выходной файлы задаются аргументами.
