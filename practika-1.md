@@ -198,7 +198,6 @@ labex:project/ $ ./reg banner
 
 check.sh
 ```bash
-cat << 'EOF' > check.sh
 #!/bin/bash
 dir="${1:-.}"
 
