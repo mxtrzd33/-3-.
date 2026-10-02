@@ -290,13 +290,6 @@ labex:project/ $ chmod +x zad9
 labex:project/ $ ./zad9 hello.c hellonew.c  
 ```
 
-hello.c
-
-<img width="554" height="244" alt="image" src="https://github.com/user-attachments/assets/e782ae31-1e7c-478b-9c04-fc42d1c1f32a" />
-
-hellonew.c
-
-<img width="1217" height="298" alt="image" src="https://github.com/user-attachments/assets/07bd63c0-5ff7-45ed-b230-be1f6c3d8b62" />
 
 ## Задача 10
 
