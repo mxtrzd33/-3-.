@@ -248,14 +248,75 @@ labex:project/ $ ./dublicat t
 
 Написать программу, которая находит все файлы в данном каталоге с расширением, указанным в качестве аргумента и архивирует все эти файлы в архив tar.
 
+archiv
+```bash
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 extension [dir]" >&2
+    exit 1
+fi
+
+ext="$1"
+dir="${2:-.}"
+archive="archive_${ext}.tar"
+
+find "$dir" -type f -name "*.${ext}" -print0 | tar -cvf "$archive" --null -T -
+```
+Terminal
+```
+labex:project/ $ nano archiv
+labex:project/ $ chmod +x archiv
+labex:project/ $ ./archiv c
+./hello.c
+```
 
 ## Задача 9
 
 Написать программу, которая заменяет в файле последовательности из 4 пробелов на символ табуляции. Входной и выходной файлы задаются аргументами.
 
+zad9
+```bash
+#!/bin/bash
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 input_file output_file" >&2
+    exit 1
+fi
+
+sed 's/    /\t/g' "$1" > "$2"
+```
+Terminal
+```
+labex:project/ $ nano zad9
+labex:project/ $ chmod +x zad9
+labex:project/ $ ./zad9 hello.c hellonew.c  
+```
+
+hello.c
+<img width="554" height="244" alt="image" src="https://github.com/user-attachments/assets/e782ae31-1e7c-478b-9c04-fc42d1c1f32a" />
+
+hellonew.c
+<img width="1217" height="298" alt="image" src="https://github.com/user-attachments/assets/07bd63c0-5ff7-45ed-b230-be1f6c3d8b62" />
+
 ## Задача 10
 
 Написать программу, которая выводит названия всех пустых текстовых файлов в указанной директории. Директория передается в программу параметром. 
+
+zad10
+```bash
+#!/bin/bash
+find "${1:-.}" -type f -name "*.txt" -empty
+```
+Terminal
+```
+abex:project/ $ nano zad10
+labex:project/ $ chmod +x zad10
+labex:project/ $ touch t/101.txt t/102.txt t/103.txt; ./zad10 t
+t/101.txt
+t/102.txt
+t/103.txt
+```
 
 
 
