@@ -175,10 +175,7 @@ fi
 sudo install -m 755 "$1" /usr/local/bin/
 echo "Команда '$1' успешно зарегистрирована в /usr/local/bin"
 ```
-banner
-```bash
-echo -e '#!/bin/bash\necho "this banner"' > banner
-```
+
 Terminal
 ```
 labex:project/ $ nano reg
