@@ -80,7 +80,7 @@ labex:project/ $ grep -v '^#' /etc/protocols | awk '{print $2, $1}' | sort -rn |
 ```
 bash:
 ```bash
-#!/bin/
+#!/bin/bash
 if [ $# -eq 0 ]; then
     echo "Использование: $0 \"текст для вывода\""
     exit 1
