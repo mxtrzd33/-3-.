@@ -79,7 +79,7 @@ labex:project/ $ grep -v '^#' /etc/protocols | awk '{print $2, $1}' | sort -rn |
 +-----------------------+
 ```
 bash:
-```bash
+```
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
@@ -118,7 +118,7 @@ h hello include int main n printf return stdio void world
 Решение:
 
 idents.sh
-```idents.sh
+```
 
 #!/bin/bash
 
@@ -131,7 +131,7 @@ grep -oE '[A-Za-z_][A-Za-z0-9_]*' "$1" | sort -u | tr '\n' ' '
 echo
 ```
 hello.c
-```hello.c
+```
 #include <stdio.h>
 
 int main(void) {
@@ -165,7 +165,7 @@ h Hello include int main n printf return stdio void world
 Решение:
 
 reg
-```bash
+```
 
 #!/bin/bash
 
@@ -195,7 +195,7 @@ labex:project/ $ ./reg banner
 Написать программу для проверки наличия комментария в первой строке файлов с расширением c, js и py.
 
 check.sh
-```bash
+```
 
 #!/bin/bash
 
@@ -232,7 +232,7 @@ labex:project/ $ ./check.sh
 
 dublicat
 
-```bash
+```
 
 #!/bin/bash
 
@@ -255,7 +255,7 @@ labex:project/ $ ./dublicat t
 Написать программу, которая находит все файлы в данном каталоге с расширением, указанным в качестве аргумента и архивирует все эти файлы в архив tar.
 
 archiv
-```bash
+```
 
 #!/bin/bash
 
@@ -283,7 +283,7 @@ labex:project/ $ ./archiv c
 Написать программу, которая заменяет в файле последовательности из 4 пробелов на символ табуляции. Входной и выходной файлы задаются аргументами.
 
 zad9
-```bash
+```
 
 #!/bin/bash
 
@@ -307,7 +307,7 @@ labex:project/ $ ./zad9 hello.c hellonew.c
 Написать программу, которая выводит названия всех пустых текстовых файлов в указанной директории. Директория передается в программу параметром. 
 
 zad10
-```bash
+```
 
 #!/bin/bash
 
