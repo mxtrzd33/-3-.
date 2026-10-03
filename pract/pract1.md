@@ -164,6 +164,7 @@ h Hello include int main n printf return stdio void world
 
 reg
 ```bash
+
 #!/bin/bash
 if [ $# -ne 1 ]; then
     echo "Использование: $0 <файл>" >&2
