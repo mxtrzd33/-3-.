@@ -81,6 +81,7 @@ labex:project/ $ grep -v '^#' /etc/protocols | awk '{print $2, $1}' | sort -rn |
 bash:
 ```bash
 #!/bin/bash
+
 if [ $# -eq 0 ]; then
     echo "Использование: $0 \"текст для вывода\""
     exit 1
@@ -120,6 +121,7 @@ idents.sh
 ```idents.sh
 
 #!/bin/bash
+
 if [ $# -eq 0 ]; then
     echo "Использование: $0 <файл>"
     exit 1
@@ -166,6 +168,7 @@ reg
 ```bash
 
 #!/bin/bash
+
 if [ $# -ne 1 ]; then
     echo "Использование: $0 <файл>" >&2
     exit 1
@@ -195,6 +198,7 @@ check.sh
 ```bash
 
 #!/bin/bash
+
 dir="${1:-.}"
 
 find "$dir" -type f \( -name '*.c' -o -name '*.js' -o -name '*.py' \) -print0 | while IFS= read -r -d '' file; do
@@ -231,6 +235,7 @@ dublicat
 ```bash
 
 #!/bin/bash
+
 dir="${1:-.}"
 
 find "$dir" -type f -exec md5sum {} + | sort | uniq -w32 --all-repeated=separate
@@ -305,6 +310,7 @@ zad10
 ```bash
 
 #!/bin/bash
+
 find "${1:-.}" -type f -name "*.txt" -empty
 ```
 Terminal
