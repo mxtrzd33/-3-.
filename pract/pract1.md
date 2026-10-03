@@ -118,6 +118,7 @@ h hello include int main n printf return stdio void world
 
 idents.sh
 ```idents.sh
+
 #!/bin/bash
 if [ $# -eq 0 ]; then
     echo "Использование: $0 <файл>"
@@ -191,6 +192,7 @@ labex:project/ $ ./reg banner
 
 check.sh
 ```bash
+
 #!/bin/bash
 dir="${1:-.}"
 
@@ -226,6 +228,7 @@ labex:project/ $ ./check.sh
 dublicat
 
 ```bash
+
 #!/bin/bash
 dir="${1:-.}"
 
@@ -247,6 +250,7 @@ labex:project/ $ ./dublicat t
 
 archiv
 ```bash
+
 #!/bin/bash
 
 if [ $# -lt 1 ]; then
@@ -274,6 +278,7 @@ labex:project/ $ ./archiv c
 
 zad9
 ```bash
+
 #!/bin/bash
 
 if [ $# -lt 2 ]; then
@@ -297,6 +302,7 @@ labex:project/ $ ./zad9 hello.c hellonew.c
 
 zad10
 ```bash
+
 #!/bin/bash
 find "${1:-.}" -type f -name "*.txt" -empty
 ```
