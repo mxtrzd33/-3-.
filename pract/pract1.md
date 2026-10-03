@@ -79,7 +79,8 @@ labex:project/ $ grep -v '^#' /etc/protocols | awk '{print $2, $1}' | sort -rn |
 +-----------------------+
 ```
 bash:
-```bash
+```
+
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
